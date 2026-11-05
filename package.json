@@ -1,0 +1,25 @@
+{
+  "name": "sitio_desarrollo",
+  "version": "1.0.0",
+  "description": "Atlas educativo interactivo para explorar las emociones humanas mediante modelos 3D, expresiones corporales y exposiciones digitales.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brandon12209/atlas-de-las-emociones.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Brandon12209/atlas-de-las-emociones/issues"
+  },
+  "homepage": "https://github.com/Brandon12209/atlas-de-las-emociones#readme",
+  "devDependencies": {
+    "vite": "^8.3.6"
+  }
+}
