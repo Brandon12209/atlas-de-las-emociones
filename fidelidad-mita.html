@@ -1,0 +1,232 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1">
+  <title>PGI | Laboratorio de fidelidad visual</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #111214;
+      color: #f4f4f4;
+      font-family: system-ui, sans-serif;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 290px;
+      min-height: 100vh;
+    }
+    .escena {
+      position: relative;
+      min-height: 75vh;
+      background: radial-gradient(
+        circle at 50% 45%, #393939, #161616
+      );
+    }
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      min-height: 75vh;
+    }
+    .marca {
+      position: absolute;
+      top: 24px;
+      left: 26px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marca strong { letter-spacing: 2px; }
+    .marca p { font-size: 12px; color: #bbb; }
+    aside {
+      padding: 28px 22px;
+      background: #1b1c20;
+      border-left: 1px solid #35363a;
+    }
+    h1 { font-size: 20px; margin: 0 0 10px; }
+    .nota { font-size: 12px; color: #a9a9ae; }
+    label {
+      display: block;
+      font-size: 13px;
+      margin-top: 24px;
+    }
+    input, select, button {
+      width: 100%;
+      margin-top: 10px;
+      accent-color: #d3a0a0;
+    }
+    select, button {
+      background: #303137;
+      color: white;
+      border: 1px solid #54555c;
+      border-radius: 7px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    button { margin-top: 25px; }
+    .estado {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #babac0;
+      line-height: 1.6;
+    }
+    @media (max-width: 760px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { border-left: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <section class="escena">
+    <div class="marca">
+      <strong>PGI / FIDELIDAD VISUAL</strong>
+      <p>Mita V2 · Laboratorio de renderizado</p>
+    </div>
+
+    <model-viewer
+      id="mita"
+      src="/models/MITA_V2_TEST.glb"
+      camera-controls
+      camera-orbit="0deg 75deg auto"
+      min-camera-orbit="auto 20deg auto"
+      max-camera-orbit="auto 85deg auto"
+      min-field-of-view="15deg"
+      interaction-prompt="none"
+      environment-image="neutral"
+      tone-mapping="neutral"
+      exposure="1"
+      shadow-intensity="0.35"
+      shadow-softness="0.7"
+      alt="Modelo tridimensional de Mita">
+    </model-viewer>
+  </section>
+
+  <aside>
+    <h1>Calibración visual</h1>
+    <p class="nota">
+      Ajustes reversibles. No alteran el archivo GLB.
+    </p>
+
+    <label for="exposicion">Exposición</label>
+    <input id="exposicion" type="range"
+           min="0.4" max="1.6" step="0.05" value="1">
+
+    <label for="sombra">Intensidad de sombra</label>
+    <input id="sombra" type="range"
+           min="0" max="1" step="0.05" value="0.35">
+
+    <label for="suavidad">Suavidad de sombra</label>
+    <input id="suavidad" type="range"
+           min="0" max="1" step="0.05" value="0.7">
+
+    <label for="color">Reproducción de color</label>
+    <select id="color">
+      <option value="neutral">Khronos PBR Neutral</option>
+      <option value="agx">AgX</option>
+      <option value="aces">ACES</option>
+    </select>
+
+    <label for="entorno">Iluminación ambiental</label>
+    <select id="entorno">
+      <option value="neutral">Estudio neutro</option>
+      <option value="legacy">Estudio clásico</option>
+    </select>
+
+    <button id="efectos">
+      Activar suavizado profesional SMAA
+    </button>
+
+    <button id="restaurar">
+      Restablecer configuración
+    </button>
+
+    <div id="estado" class="estado">
+      Preparando modelo...
+    </div>
+  </aside>
+</div>
+
+<script type="module">
+  import '@google/model-viewer';
+
+  const visor = document.querySelector('#mita');
+  const estado = document.querySelector('#estado');
+  const boton = document.querySelector('#efectos');
+
+  let compositor = null;
+
+  function configurarRango(id, atributo) {
+    document.querySelector(id).addEventListener(
+      'input',
+      event => visor.setAttribute(
+        atributo,
+        event.target.value
+      )
+    );
+  }
+
+  configurarRango('#exposicion', 'exposure');
+  configurarRango('#sombra', 'shadow-intensity');
+  configurarRango('#suavidad', 'shadow-softness');
+
+  document.querySelector('#color').onchange = event => {
+    visor.setAttribute('tone-mapping', event.target.value);
+  };
+
+  document.querySelector('#entorno').onchange = event => {
+    visor.setAttribute('environment-image', event.target.value);
+  };
+
+  boton.addEventListener('click', async () => {
+    if (compositor) {
+      compositor.remove();
+      compositor = null;
+      boton.textContent = 'Activar suavizado profesional SMAA';
+      estado.textContent = 'Efectos desactivados.';
+      return;
+    }
+
+    try {
+      await import('@google/model-viewer-effects');
+
+      compositor = document.createElement('effect-composer');
+      compositor.setAttribute('render-mode', 'quality');
+
+      compositor.innerHTML = `
+        <smaa-effect quality="high"></smaa-effect>
+        <color-grade-effect
+          tonemapping="aces_filmic">
+        </color-grade-effect>
+      `;
+
+      visor.appendChild(compositor);
+
+      boton.textContent = 'Desactivar efectos';
+      estado.textContent =
+        'SMAA y corrección ACES activados. ' +
+        'Esta vista puede alterar los colores respecto al modo neutro.';
+    } catch (error) {
+      console.error(error);
+      estado.textContent =
+        'No se pudo activar el procesamiento visual.';
+    }
+  });
+
+  document.querySelector('#restaurar').onclick = () => {
+    location.reload();
+  };
+
+  visor.addEventListener('load', () => {
+    estado.textContent =
+      'Mita cargada. Ajusta los controles para comparar.';
+  });
+
+  visor.addEventListener('error', event => {
+    console.error(event);
+    estado.textContent = 'Error al cargar Mita.';
+  });
+</script>
+</body>
+</html>

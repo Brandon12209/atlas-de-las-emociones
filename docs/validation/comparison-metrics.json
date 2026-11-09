@@ -1,0 +1,58 @@
+[
+  {
+    "view": "back",
+    "silhouetteIoU": 0.9953344811282884,
+    "meanAbsoluteRGB_0_255": 3.584949570994957,
+    "p95AbsoluteRGB_0_255": 14.0,
+    "PSNR_foreground_dB": 28.94940841622803,
+    "evaluatedPixels": 111576
+  },
+  {
+    "view": "face",
+    "silhouetteIoU": 0.9973852147684745,
+    "meanAbsoluteRGB_0_255": 3.10645819551346,
+    "p95AbsoluteRGB_0_255": 10.0,
+    "PSNR_foreground_dB": 29.740024544233936,
+    "evaluatedPixels": 285699
+  },
+  {
+    "view": "front",
+    "silhouetteIoU": 0.9952024255395042,
+    "meanAbsoluteRGB_0_255": 3.705802763391337,
+    "p95AbsoluteRGB_0_255": 15.0,
+    "PSNR_foreground_dB": 28.67004218705096,
+    "evaluatedPixels": 111602
+  },
+  {
+    "view": "hand-left",
+    "silhouetteIoU": 0.9986920853350705,
+    "meanAbsoluteRGB_0_255": 2.4350919032404366,
+    "p95AbsoluteRGB_0_255": 7.0,
+    "PSNR_foreground_dB": 33.19029633698239,
+    "evaluatedPixels": 196239
+  },
+  {
+    "view": "hand-right",
+    "silhouetteIoU": 0.9970465161541456,
+    "meanAbsoluteRGB_0_255": 2.764308104740386,
+    "p95AbsoluteRGB_0_255": 8.0,
+    "PSNR_foreground_dB": 30.410944142950616,
+    "evaluatedPixels": 204913
+  },
+  {
+    "view": "side",
+    "silhouetteIoU": 0.9946221994802797,
+    "meanAbsoluteRGB_0_255": 3.6122212919344046,
+    "p95AbsoluteRGB_0_255": 15.0,
+    "PSNR_foreground_dB": 28.78820905723082,
+    "evaluatedPixels": 99133
+  },
+  {
+    "view": "three-quarter",
+    "silhouetteIoU": 0.9958422659650491,
+    "meanAbsoluteRGB_0_255": 3.8283024084446224,
+    "p95AbsoluteRGB_0_255": 16.0,
+    "PSNR_foreground_dB": 28.110703352997767,
+    "evaluatedPixels": 107303
+  }
+]

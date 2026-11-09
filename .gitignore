@@ -147,3 +147,13 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+public/models/*.glb
+# Historical export retained locally for audit; not part of the release.
+public/cappie/original.glb
+public/preview/
+evidence/
+test-results/
+playwright-report/
+*.blend
+*.blend1
+!assets/source/*.blend

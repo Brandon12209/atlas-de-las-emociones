@@ -1,0 +1,110 @@
+[
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "index.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "coleccion.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "felicidad.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "miedo.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "tristeza.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "enojo.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "asco.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "metodologia.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "route": "fuentes.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "index.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "coleccion.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "felicidad.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "miedo.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "tristeza.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "enojo.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "asco.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "metodologia.html",
+    "horizontalOverflow": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "route": "fuentes.html",
+    "horizontalOverflow": false
+  }
+]

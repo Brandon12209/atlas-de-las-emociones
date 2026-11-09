@@ -1,5 +1,9 @@
 MIT License
 
+This license applies to the original project code. Third-party character models,
+textures, and character images are excluded; see docs/THIRD_PARTY.md.
+Bundled fonts are covered by their accompanying SIL Open Font License files.
+
 Copyright (c) 2026 Brandon12209
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

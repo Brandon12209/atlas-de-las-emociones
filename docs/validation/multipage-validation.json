@@ -1,0 +1,146 @@
+[
+  {
+    "route": "index.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "coleccion.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "felicidad.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "miedo.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "tristeza.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "enojo.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "asco.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "metodologia.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "fuentes.html",
+    "width": 1440,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "index.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "coleccion.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "felicidad.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "miedo.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "tristeza.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "enojo.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "asco.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "metodologia.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  },
+  {
+    "route": "fuentes.html",
+    "width": 390,
+    "status": 200,
+    "overlaps": [],
+    "errors": [],
+    "accessibilityViolations": 0
+  }
+]

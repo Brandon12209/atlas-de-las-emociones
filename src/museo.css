@@ -1,0 +1,396 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  background: #09090c;
+  color: #f5f1eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 18px 0 30px;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #222026 0,
+    #0a0a0d 72%
+  );
+}
+
+body > h1,
+body > p {
+  display: none;
+}
+
+#pgi-museo {
+  position: relative;
+  isolation: isolate;
+  width: min(1500px, calc(100% - 28px));
+  height: clamp(520px, 84svh, 950px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #484048;
+  border-radius: 18px;
+  background: #111216;
+  box-shadow: 0 25px 90px #0009;
+}
+
+#pgi-museo:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  border-radius: 0;
+}
+
+#pgi-museo > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  position: absolute;
+  inset: 0;
+}
+
+#pgi-museo .pgi-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 26px clamp(16px, 3vw, 42px);
+  pointer-events: none;
+  background: linear-gradient(#111216c9, transparent);
+}
+
+#pgi-museo .pgi-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#pgi-museo .pgi-mark {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 1px solid #bd8a82;
+  border-radius: 11px;
+  color: #efc3ba;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  background: #301b20bd;
+}
+
+#pgi-museo .pgi-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #d5a89f;
+  font-size: 10px;
+  letter-spacing: .17em;
+  font-weight: 700;
+}
+
+#pgi-museo h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 34px);
+  font-weight: 580;
+  letter-spacing: -.04em;
+  line-height: 1.1;
+}
+
+#pgi-museo .pgi-version {
+  margin-top: 10px;
+  white-space: nowrap;
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: #e3d8d2;
+}
+
+#pgi-museo .pgi-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 7px 1px;
+  border-radius: 50%;
+  background: #b58377;
+}
+
+#pgi-museo .pgi-bottom {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 58px clamp(14px, 3vw, 34px) 22px;
+  background: linear-gradient(
+    transparent,
+    #0c0c10b8 68%,
+    #0c0c10e8
+  );
+  pointer-events: none;
+}
+
+#pgi-museo .pgi-instruction {
+  padding-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #d0c9cb;
+}
+
+#pgi-museo .pgi-instruction b {
+  color: #bb8f87;
+  padding: 0 5px;
+}
+
+#pgi-museo .pgi-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+  pointer-events: auto;
+}
+
+#pgi-museo button {
+  font: inherit;
+  cursor: pointer;
+  color: #f4eee8;
+  background: #262229e8;
+  border: 1px solid #685c64;
+  border-radius: 10px;
+  min-height: 43px;
+  padding: 9px 15px;
+  font-size: 12px;
+  font-weight: 620;
+  transition:
+    background .16s,
+    border-color .16s,
+    transform .16s;
+}
+
+#pgi-museo button:hover {
+  background: #392d36;
+  border-color: #cf9b91;
+}
+
+#pgi-museo button:active {
+  transform: scale(.97);
+}
+
+#pgi-museo button:focus-visible {
+  outline: 2px solid #edb7ac;
+  outline-offset: 3px;
+}
+
+#pgi-museo .pgi-actions button:first-child,
+#pgi-museo .pgi-actions button:nth-child(2) {
+  font-size: 22px;
+  width: 43px;
+  padding: 4px;
+}
+
+#pgi-museo .pgi-actions button[data-action="reset"] {
+  background: #b67c72;
+  color: #150b0e;
+  border-color: #c28a80;
+}
+
+#pgi-museo .pgi-actions button[data-action="reset"]:hover {
+  background: #d39789;
+}
+
+#pgi-museo .pgi-loader {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: min(320px, 80%);
+  border: 1px solid #68555c;
+  border-radius: 14px;
+  background: #131217ed;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px #0009;
+}
+
+#pgi-museo .pgi-loader-label {
+  display: block;
+  color: #f7eae8;
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#pgi-museo progress {
+  display: block;
+  width: 100%;
+  height: 8px;
+  accent-color: #bb8177;
+}
+
+#pgi-museo .pgi-status {
+  position: absolute;
+  z-index: 2;
+  top: 118px;
+  left: clamp(16px, 3vw, 42px);
+  max-width: 330px;
+  font-size: 11px;
+  color: #c9c1c3;
+  pointer-events: none;
+  text-shadow: 0 2px 12px #000;
+}
+
+#pgi-museo .pgi-focus {
+  position: absolute;
+  z-index: 2;
+  top: 35%;
+  right: clamp(14px, 3vw, 38px);
+  width: min(240px, 42%);
+  padding: 17px;
+  border: 1px solid #634950;
+  border-radius: 12px;
+  background: #171519d9;
+  box-shadow: 0 15px 40px #0008;
+  backdrop-filter: blur(12px);
+}
+
+#pgi-museo .pgi-focus strong {
+  font-weight: 650;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#pgi-museo .pgi-focus p {
+  margin: 0 0 14px;
+  color: #d5c9cb;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#pgi-museo .pgi-focus button {
+  font-size: 11px;
+  min-height: 36px;
+}
+
+#pgi-museo [hidden] {
+  display: none !important;
+}
+
+#pgi-museo .pgi-help {
+  max-width: 440px;
+  width: calc(100% - 28px);
+  border: 1px solid #86656d;
+  border-radius: 16px;
+  background: #201c23;
+  color: #f5eee9;
+  padding: 27px;
+  box-shadow: 0 20px 65px #000b;
+}
+
+#pgi-museo .pgi-help::backdrop {
+  background: #050507c9;
+}
+
+#pgi-museo .pgi-help h3 {
+  font-size: 22px;
+  margin: 0 0 18px;
+}
+
+#pgi-museo .pgi-help p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e3d6d6;
+}
+
+@media (max-width: 800px) {
+  #pgi-museo .pgi-bottom {
+    display: block;
+  }
+
+  #pgi-museo .pgi-instruction {
+    padding-bottom: 12px;
+    font-size: 11px;
+  }
+
+  #pgi-museo .pgi-actions {
+    justify-content: flex-start;
+  }
+
+  #pgi-museo .pgi-version {
+    display: none;
+  }
+
+  #pgi-museo .pgi-status {
+    top: 108px;
+  }
+}
+
+@media (max-width: 480px) {
+  #pgi-museo {
+    width: calc(100% - 12px);
+    height: min(86svh, 770px);
+    min-height: 500px;
+    border-radius: 12px;
+  }
+
+  #pgi-museo .pgi-header {
+    padding: 18px 14px;
+  }
+
+  #pgi-museo .pgi-mark {
+    width: 39px;
+    height: 39px;
+    font-size: 13px;
+  }
+
+  #pgi-museo h2 {
+    font-size: 20px;
+  }
+
+  #pgi-museo .pgi-eyebrow {
+    font-size: 8px;
+  }
+
+  #pgi-museo .pgi-bottom {
+    padding: 50px 12px 13px;
+  }
+
+  #pgi-museo .pgi-instruction {
+    font-size: 10px;
+  }
+
+  #pgi-museo .pgi-status {
+    top: 87px;
+    left: 14px;
+    font-size: 10px;
+  }
+
+  #pgi-museo .pgi-focus {
+    width: min(220px, 70%);
+    top: 30%;
+    right: 12px;
+    padding: 12px;
+  }
+
+  #pgi-museo button {
+    min-height: 40px;
+    padding: 7px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pgi-museo button {
+    transition: none;
+  }
+}

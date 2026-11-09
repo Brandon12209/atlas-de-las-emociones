@@ -1,0 +1,109 @@
+{
+  "source": "MITA_ASCO_WEB.blend",
+  "objects": [
+    {
+      "name": "Mita_Usual_Head",
+      "vertices": 4304,
+      "polygons": 4478,
+      "materials": [
+        "Mita_Usual_Face",
+        "Mita_Face_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Cappie_Gloves",
+      "vertices": 2422,
+      "polygons": 4780,
+      "materials": [
+        "Mita_Cappie_Body",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Cappie_Hair",
+      "vertices": 3266,
+      "polygons": 6112,
+      "materials": [
+        "Mita_Cappie_Hair",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Cappie_Hat",
+      "vertices": 384,
+      "polygons": 684,
+      "materials": [
+        "Mita_Cappie_Hat",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_School_Body",
+      "vertices": 1996,
+      "polygons": 3776,
+      "materials": [
+        "Mita_School_Body",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_School_Pantyhose",
+      "vertices": 1200,
+      "polygons": 2340,
+      "materials": [
+        "Mita_School_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_School_Shoes",
+      "vertices": 1176,
+      "polygons": 2276,
+      "materials": [
+        "Mita_School_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_School_Skirt",
+      "vertices": 4664,
+      "polygons": 9328,
+      "materials": [
+        "Mita_School_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_School_Sweater",
+      "vertices": 2430,
+      "polygons": 4736,
+      "materials": [
+        "Mita_School_Clothes",
+        "Mita_Outline"
+      ]
+    }
+  ],
+  "method": "Eevee UV radiance bake; original evaluated geometry; separate original outline shells",
+  "landmarks": {
+    "manoL": [
+      0.3331707715988159,
+      1.4748151302337646,
+      0.16170400381088257
+    ],
+    "manoR": [
+      -0.11203913390636444,
+      1.094635009765625,
+      0.2911056578159332
+    ],
+    "torso": [
+      -0.04026646912097931,
+      1.1217987537384033,
+      -0.16097262501716614
+    ],
+    "rostro": [
+      -0.04856898635625839,
+      1.5932962894439697,
+      -0.11001098901033401
+    ]
+  }
+}

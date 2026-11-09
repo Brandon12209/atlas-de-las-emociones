@@ -1,0 +1,317 @@
+[
+  {
+    "key": "miedo",
+    "errors": [],
+    "metrics": {
+      "meshes": 9,
+      "triangles": 41942,
+      "textures": 9,
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.3347388207912445,
+          "y": -0.008126440457999706,
+          "z": -0.23984248097985983
+        },
+        "max": {
+          "x": 0.34484440088272095,
+          "y": 1.7928067301400006,
+          "z": 0.32175180315971375
+        }
+      },
+      "zoom": 1,
+      "target": [
+        0,
+        0.9499999999999998,
+        0
+      ],
+      "position": [
+        0.12,
+        1.01,
+        5
+      ],
+      "materials": [
+        {
+          "name": "Gloves001",
+          "material": "Mita_Cappie_Gloves_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair003",
+          "material": "Mita_Cappie_Hair_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair005",
+          "material": "Mita_Cappie_Hat_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene018",
+          "material": "Mita_School_Body_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene023",
+          "material": "Mita_School_Pantyhose_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene027",
+          "material": "Mita_School_Shoes_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene031",
+          "material": "Mita_School_Skirt_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene032",
+          "material": "Mita_School_Sweater_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene006",
+          "material": "Mita_Usual_Head_WEB_RADIANCE",
+          "map": true
+        }
+      ]
+    }
+  },
+  {
+    "key": "tristeza",
+    "errors": [],
+    "metrics": {
+      "meshes": 9,
+      "triangles": 41942,
+      "textures": 9,
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.2524298429489136,
+          "y": -0.008114638738334179,
+          "z": -0.20759557839483023
+        },
+        "max": {
+          "x": 0.2280697375535965,
+          "y": 1.8201995943672955,
+          "z": 0.26238977909088135
+        }
+      },
+      "zoom": 1,
+      "target": [
+        0,
+        0.9499999999999998,
+        0
+      ],
+      "position": [
+        0.12,
+        1.01,
+        5
+      ],
+      "materials": [
+        {
+          "name": "Gloves001",
+          "material": "Mita_Cappie_Gloves_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair003",
+          "material": "Mita_Cappie_Hair_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair005",
+          "material": "Mita_Cappie_Hat_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene018",
+          "material": "Mita_School_Body_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene023",
+          "material": "Mita_School_Pantyhose_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene027",
+          "material": "Mita_School_Shoes_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene031",
+          "material": "Mita_School_Skirt_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene032",
+          "material": "Mita_School_Sweater_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene006",
+          "material": "Mita_Usual_Head_WEB_RADIANCE",
+          "map": true
+        }
+      ]
+    }
+  },
+  {
+    "key": "enojo",
+    "errors": [],
+    "metrics": {
+      "meshes": 8,
+      "triangles": 52632,
+      "textures": 8,
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.21208401024341583,
+          "y": -0.0059300875291228294,
+          "z": -0.19224686920642853
+        },
+        "max": {
+          "x": 0.23726123571395874,
+          "y": 1.8000961542129517,
+          "z": 0.24256949126720428
+        }
+      },
+      "zoom": 1,
+      "target": [
+        0,
+        0.9499999999999998,
+        0
+      ],
+      "position": [
+        0.12,
+        1.01,
+        5
+      ],
+      "materials": [
+        {
+          "name": "Mita_Glasses_WEB",
+          "material": "Mita_Glasses_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair003",
+          "material": "Mita_Shorthair_Hair_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Body001",
+          "material": "Mita_Usual_Body_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene006",
+          "material": "Mita_Usual_Head_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Pantyhose001",
+          "material": "Mita_Usual_Pantyhose_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Shoes001",
+          "material": "Mita_Usual_Shoes_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Skirt002",
+          "material": "Mita_Usual_Skirt_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Sweater002",
+          "material": "Mita_Usual_Sweater_WEB_RADIANCE",
+          "map": true
+        }
+      ]
+    }
+  },
+  {
+    "key": "asco",
+    "errors": [],
+    "metrics": {
+      "meshes": 9,
+      "triangles": 41942,
+      "textures": 9,
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.26665276288986206,
+          "y": -0.008129690773785114,
+          "z": -0.2649166500195861
+        },
+        "max": {
+          "x": 0.39625608921051025,
+          "y": 1.7886152123101056,
+          "z": 0.3608832359313965
+        }
+      },
+      "zoom": 1,
+      "target": [
+        0,
+        0.9499999999999998,
+        0
+      ],
+      "position": [
+        0.12,
+        1.01,
+        5
+      ],
+      "materials": [
+        {
+          "name": "Gloves001",
+          "material": "Mita_Cappie_Gloves_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair003",
+          "material": "Mita_Cappie_Hair_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Hair005",
+          "material": "Mita_Cappie_Hat_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene018",
+          "material": "Mita_School_Body_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene023",
+          "material": "Mita_School_Pantyhose_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene027",
+          "material": "Mita_School_Shoes_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene031",
+          "material": "Mita_School_Skirt_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene032",
+          "material": "Mita_School_Sweater_WEB_RADIANCE",
+          "map": true
+        },
+        {
+          "name": "Scene006",
+          "material": "Mita_Usual_Head_WEB_RADIANCE",
+          "map": true
+        }
+      ]
+    }
+  }
+]

@@ -4,9 +4,10 @@
   "description": "Atlas educativo interactivo para explorar las emociones humanas mediante modelos 3D, expresiones corporales y exposiciones digitales.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "playwright test",
     "dev": "vite",
-    "build": "vite build",
+    "pages": "node scripts/build-pages.cjs",
+    "build": "node scripts/build-pages.cjs && vite build",
     "preview": "vite preview"
   },
   "repository": {
@@ -22,10 +23,15 @@
   },
   "homepage": "https://github.com/Brandon12209/atlas-de-las-emociones#readme",
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@gltf-transform/cli": "^4.5.1",
+    "@playwright/test": "^1.65.0",
     "vite": "^8.3.6"
   },
   "dependencies": {
     "@google/model-viewer": "^4.4.0",
+    "@google/model-viewer-effects": "1.4.0",
+    "@pixiv/three-vrm-materials-mtoon": "3.5.5",
     "three": "^0.183.2"
   }
 }

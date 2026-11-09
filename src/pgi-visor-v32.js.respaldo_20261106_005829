@@ -1,0 +1,197 @@
+// PGI | Atlas de las Emociones | Laboratorio V3.2
+// Visor real Three.js + MToon (Pixiv), sin recrear un motor.
+// Se carga el modulo MToon DESPUES del GLB; solo se renderiza bajo demanda.
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const canvasHost = document.querySelector('#pgi-v32-escena');
+const status = document.querySelector('#pgi-v32-estado');
+if (!canvasHost || !status) throw new Error('El laboratorio HTML V3.2 es incompatible.');
+
+const MODEL_URL = '/models/MITA_V32_LAB.glb';
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#222126');
+
+const camera = new THREE.PerspectiveCamera(42, 1, 0.02, 100);
+const renderer = new THREE.WebGLRenderer({
+  antialias: false, alpha: false, powerPreference: 'high-performance',
+});
+const dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+renderer.setPixelRatio(dpr);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.domElement.setAttribute('aria-label', 'Mita tridimensional en la sala del Atlas');
+canvasHost.appendChild(renderer.domElement);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new SMAAPass());
+composer.addPass(new OutputPass());
+
+const orbit = new OrbitControls(camera, renderer.domElement);
+orbit.enableDamping = true;
+orbit.dampingFactor = 0.075;
+orbit.enablePan = false;
+orbit.minPolarAngle = 0.10;
+orbit.maxPolarAngle = Math.PI * 0.48; // Evitar tomas bajo la falda.
+orbit.enableZoom = true;
+
+// Iluminacion estable de estudio. Sin bloom ni desenfoque en ojos/tatuaje.
+scene.add(new THREE.HemisphereLight(0xffffff, 0x34313a, 1.4));
+const key = new THREE.DirectionalLight(0xfff8f0, 2.1);
+key.position.set(3.5, 5.5, 5);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+key.shadow.bias = -0.00015;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xd2e1ff, 0.50);
+fill.position.set(-4, 3.5, -2);
+scene.add(fill);
+
+let inViewport = true;
+let tabVisible = !document.hidden;
+let framePending = false;
+const toonMaterials = new Set();
+
+function requestDraw() {
+  if (!inViewport || !tabVisible || framePending) return;
+  framePending = true;
+  requestAnimationFrame(() => {
+    framePending = false;
+    // OrbitControls lanzara otros eventos change mientras dure el damping.
+    orbit.update();
+    for (const mat of toonMaterials) mat.update(0);
+    composer.render();
+  });
+}
+orbit.addEventListener('change', requestDraw);
+
+function resize() {
+  const w = Math.max(1, Math.round(canvasHost.clientWidth));
+  const h = Math.max(1, Math.round(canvasHost.clientHeight));
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h, false);
+  composer.setSize(w, h);
+  requestDraw();
+}
+new ResizeObserver(resize).observe(canvasHost);
+document.addEventListener('visibilitychange', () => {
+  tabVisible = !document.hidden;
+  if (tabVisible) requestDraw();
+});
+new IntersectionObserver(([entry]) => {
+  inViewport = !!entry?.isIntersecting;
+  if (inViewport) requestDraw();
+}, { threshold: 0 }).observe(canvasHost);
+
+function profileFor(name) {
+  // Son valores iniciales tecnicos, no una captura exacta de MITA Shader.
+  // Mantener un sombreado suave para que no se pierda el tatuaje de lagrima.
+  if (name.includes('_Head_')) {
+    return { shade: 0xe9ddde, shift: 0.025, toony: 0.95 };
+  }
+  if (name.includes('_Hair_') || name.includes('_Hat_')) {
+    return { shade: 0xbeb5d3, shift: -0.01, toony: 0.95 };
+  }
+  return { shade: 0xbcb7ce, shift: -0.02, toony: 0.94 };
+}
+
+async function applyMToon(model) {
+  // Este import dinamico deja el modulo fuera de la carga inicial del HTML.
+  const { MToonMaterial } = await import('@pixiv/three-vrm-materials-mtoon');
+  let changed = 0;
+  const cache = new Map();
+  model.traverse((obj) => {
+    if (!obj.isMesh) return;
+    const convert = (orig) => {
+      if (!orig) return orig;
+      if (orig.name.endsWith('_OUTLINE') || !orig.map) return orig;
+      if (cache.has(orig.uuid)) return cache.get(orig.uuid);
+      const preset = profileFor(orig.name);
+      const mat = new MToonMaterial({
+        color: (orig.color || new THREE.Color(0xffffff)).clone(),
+        map: orig.map,
+        side: orig.side,
+        transparent: orig.transparent,
+        opacity: orig.opacity,
+        alphaTest: orig.alphaTest,
+        depthWrite: orig.depthWrite,
+        vertexColors: orig.vertexColors,
+        shadeColorFactor: new THREE.Color(preset.shade),
+        shadingShiftFactor: preset.shift,
+        shadingToonyFactor: preset.toony,
+        giEqualizationFactor: 0.90,
+      });
+      mat.name = orig.name;
+      cache.set(orig.uuid, mat);
+      toonMaterials.add(mat);
+      changed += 1;
+      return mat;
+    };
+    obj.material = Array.isArray(obj.material)
+      ? obj.material.map(convert)
+      : convert(obj.material);
+  });
+  return changed;
+}
+
+const loader = new GLTFLoader();
+loader.load(MODEL_URL, async ({ scene: model }) => {
+  try {
+    // La conversion se hace sin cambiar el GLB original; respaldo PBR.
+    let count = 0;
+    let mode = 'PBR compatible';
+    try {
+      count = await applyMToon(model);
+      mode = `MToon activo en ${count} materiales`;
+    } catch (err) {
+      console.warn('PGI | MToon no disponible; se conserva el PBR del GLB', err);
+    }
+
+    model.traverse((obj) => {
+      if (obj.isMesh) {
+        obj.castShadow = true;
+        obj.receiveShadow = true;
+      }
+    });
+    scene.add(model);
+    const box = new THREE.Box3().setFromObject(model);
+    if (box.isEmpty()) throw new Error('GLB sin geometria visible');
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+    const radius = Math.max(size.x, size.y, size.z) * 0.5;
+    orbit.target.copy(center);
+    camera.position.copy(center).add(new THREE.Vector3(0, radius * 0.6, radius * 3.6));
+    orbit.minDistance = Math.max(radius * 1.05, 0.5);
+    orbit.maxDistance = Math.max(radius * 7, 5);
+    camera.near = Math.max(0.015, radius * 0.012);
+    camera.far = Math.max(40, radius * 25);
+    camera.updateProjectionMatrix();
+    orbit.update();
+    resize();
+    status.textContent = `Mita V3.2 cargada. ${mode}. Orbita y zoom activos.`;
+    console.info('PGI | V3.2', { mode, meshes: model.children.length, size });
+  } catch (err) {
+    status.textContent = 'Error en el visor V3.2; revisa la consola de Chrome.';
+    console.error('PGI | Fallo V3.2', err);
+  }
+}, (progress) => {
+  if (progress.total > 0) {
+    const percent = Math.round((progress.loaded / progress.total) * 100);
+    status.textContent = `Descargando Mita V3.2: ${percent}%`;
+  }
+}, (err) => {
+  status.textContent = 'No se pudo cargar el archivo GLB V3.2.';
+  console.error('PGI | Archivo no disponible', err);
+});
+
+resize();

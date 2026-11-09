@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-08",
+  "models": {
+    "miedo": {
+      "sourceOriginal": "D:/PGI_3D/PERSONAJES/MITA/ATLAS_EMOCIONES/MIEDO/REVISION_20261106/MITA_MIEDO_CORREGIDO.blend",
+      "sourceProtected": "assets/source/MITA_MIEDO_WEB.blend",
+      "sourceSHA256": "a526bdcb7e25c758553ded5f1937390ba8a58c5b70fb4d8a6f0f0be76d340c00",
+      "originalUnchanged": true,
+      "model": "public/emotions/miedo/model.glb",
+      "modelSHA256": "67cb53bb852f97d48156aae9624df8137a99038147d459ec96fd1e28171bcb86",
+      "modelBytes": 17395740,
+      "textures": 9,
+      "meshPrimitives": 18
+    },
+    "tristeza": {
+      "sourceOriginal": "D:/PGI_3D/PERSONAJES/MITA/ATLAS_EMOCIONES/TRISTEZA/MITA_TRISTEZA.blend",
+      "sourceProtected": "assets/source/MITA_TRISTEZA_WEB.blend",
+      "sourceSHA256": "d4a018b21bade0bb52e2084056cef20e4a96c50f3c523bdea7615635c7c8a8be",
+      "originalUnchanged": true,
+      "model": "public/emotions/tristeza/model.glb",
+      "modelSHA256": "38ccab37f1f1b8b9be7e0201905f9a9cceda7e19e5f6df411d5d7045cf99cf44",
+      "modelBytes": 17383784,
+      "textures": 9,
+      "meshPrimitives": 18
+    },
+    "enojo": {
+      "sourceOriginal": "D:/PGI_3D/PERSONAJES/MITA/ATLAS_EMOCIONES/CAPPIE_REVISION_20261106/REVISION_CALIDAD_20261106/ENOJO/MITA_ENOJO_REVISION.blend",
+      "sourceProtected": "assets/source/MITA_ENOJO_WEB.blend",
+      "sourceSHA256": "fd8fd8012d0863013e5a77262fc70366efb7a8b192771b288c0d5f2e4e4f01c1",
+      "originalUnchanged": true,
+      "model": "public/emotions/enojo/model.glb",
+      "modelSHA256": "a13aae1d76b9fd407af3307a90edaaf01dc56472f2408e22ebf919718ec70762",
+      "modelBytes": 16853352,
+      "textures": 8,
+      "meshPrimitives": 15
+    },
+    "asco": {
+      "sourceOriginal": "D:/PGI_3D/PERSONAJES/MITA/ATLAS_EMOCIONES/ASCO/MITA_ASCO.blend",
+      "sourceProtected": "assets/source/MITA_ASCO_WEB.blend",
+      "sourceSHA256": "e0cbb6f2b6413d7d6c5755db15d05d298f1e4cae6115a87d02ad1656463b2ff2",
+      "originalUnchanged": true,
+      "model": "public/emotions/asco/model.glb",
+      "modelSHA256": "7133abdef9ea66ca689fac8433942522006a0bb823885d8fc06cb601ab6c7ca4",
+      "modelBytes": 17272800,
+      "textures": 9,
+      "meshPrimitives": 18
+    },
+    "felicidad": {
+      "model": "public/cappie/cappie-radiance.glb",
+      "modelSHA256": "0ec8b6319f194986e3a9bd595bed7820a24a0a15a4be5608a1ab4713b193828a",
+      "unchangedFrom": "a715173",
+      "sourceSHA256": "efd5e06b191f1c2e96ae102fe2024ac7ddbaae86e6c9d4784ac06143fb3c2f82"
+    }
+  }
+}

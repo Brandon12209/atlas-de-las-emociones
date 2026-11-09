@@ -1,0 +1,74 @@
+[
+  {
+    "view": "back",
+    "silhouetteIoU": 0.9953961197194888,
+    "meanAbsoluteRGB_0_255": 3.6647511905540555,
+    "p95AbsoluteRGB_0_255": 15.0,
+    "PSNR_foreground_dB": 28.924637725685134,
+    "evaluatedPixels": 107023
+  },
+  {
+    "view": "face",
+    "silhouetteIoU": 0.996800701572041,
+    "meanAbsoluteRGB_0_255": 4.173987302932056,
+    "p95AbsoluteRGB_0_255": 15.0,
+    "PSNR_foreground_dB": 28.72896535811329,
+    "evaluatedPixels": 245516
+  },
+  {
+    "view": "front",
+    "silhouetteIoU": 0.9959528860109411,
+    "meanAbsoluteRGB_0_255": 4.157292454857122,
+    "p95AbsoluteRGB_0_255": 18.0,
+    "PSNR_foreground_dB": 27.81673110563766,
+    "evaluatedPixels": 107049
+  },
+  {
+    "view": "hand-left",
+    "silhouetteIoU": 0.9993818568593639,
+    "meanAbsoluteRGB_0_255": 3.0566405819542704,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 31.583376293077244,
+    "evaluatedPixels": 468857
+  },
+  {
+    "view": "hand-right",
+    "silhouetteIoU": 0.9995805887086816,
+    "meanAbsoluteRGB_0_255": 2.980523625035232,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 31.762425386140446,
+    "evaluatedPixels": 469509
+  },
+  {
+    "view": "legs",
+    "silhouetteIoU": 0.9973666296442263,
+    "meanAbsoluteRGB_0_255": 2.8597694955844934,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 31.05271136300314,
+    "evaluatedPixels": 111350
+  },
+  {
+    "view": "side",
+    "silhouetteIoU": 0.9952815013404825,
+    "meanAbsoluteRGB_0_255": 4.12710555615415,
+    "p95AbsoluteRGB_0_255": 19.0,
+    "PSNR_foreground_dB": 27.672597498802993,
+    "evaluatedPixels": 83529
+  },
+  {
+    "view": "three-quarter",
+    "silhouetteIoU": 0.9954673058449371,
+    "meanAbsoluteRGB_0_255": 4.123121125528958,
+    "p95AbsoluteRGB_0_255": 18.0,
+    "PSNR_foreground_dB": 27.772443286448556,
+    "evaluatedPixels": 106735
+  },
+  {
+    "view": "torso",
+    "silhouetteIoU": 0.9977809292550044,
+    "meanAbsoluteRGB_0_255": 3.689753723292756,
+    "p95AbsoluteRGB_0_255": 14.0,
+    "PSNR_foreground_dB": 28.934461606216328,
+    "evaluatedPixels": 195593
+  }
+]

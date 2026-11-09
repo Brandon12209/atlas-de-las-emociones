@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1">
+  <title>PGI | Mita V2 · Prueba de fidelidad</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #141414;
+      color: #f3f3f3;
+      font-family: system-ui, sans-serif;
+    }
+    header { padding: 16px 24px; }
+    h1 { margin: 0; font-size: 18px; }
+    p { color: #bbb; font-size: 13px; }
+    model-viewer {
+      width: 100%;
+      height: 82vh;
+      background: radial-gradient(
+        circle at center,
+        #343434,
+        #101010
+      );
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PGI | Mita V2</h1>
+    <p id="estado">Cargando modelo...</p>
+  </header>
+
+  <model-viewer
+    src="/models/MITA_V2_TEST.glb"
+    camera-controls
+    interaction-prompt="none"
+    shadow-intensity="0.5"
+    exposure="1"
+    alt="Mita, prueba tridimensional">
+  </model-viewer>
+
+  <script type="module">
+    import '@google/model-viewer';
+
+    const visor = document.querySelector('model-viewer');
+    const estado = document.querySelector('#estado');
+
+    visor.addEventListener('load', () => {
+      estado.textContent = 'Modelo cargado correctamente.';
+    });
+
+    visor.addEventListener('error', (event) => {
+      estado.textContent =
+        'Error al cargar el modelo. Revisar consola.';
+      console.error('PGI | Error GLB:', event);
+    });
+  </script>
+</body>
+</html>

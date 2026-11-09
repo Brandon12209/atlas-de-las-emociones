@@ -1,0 +1,74 @@
+[
+  {
+    "view": "back",
+    "silhouetteIoU": 0.9959727028916878,
+    "meanAbsoluteRGB_0_255": 3.8970708471081723,
+    "p95AbsoluteRGB_0_255": 17.0,
+    "PSNR_foreground_dB": 26.908086947297775,
+    "evaluatedPixels": 112524
+  },
+  {
+    "view": "face",
+    "silhouetteIoU": 0.9969751341396774,
+    "meanAbsoluteRGB_0_255": 2.9988778786727894,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 29.885290621173702,
+    "evaluatedPixels": 231704
+  },
+  {
+    "view": "front",
+    "silhouetteIoU": 0.9957960881493938,
+    "meanAbsoluteRGB_0_255": 4.337928276229836,
+    "p95AbsoluteRGB_0_255": 18.0,
+    "PSNR_foreground_dB": 26.965044689494377,
+    "evaluatedPixels": 112515
+  },
+  {
+    "view": "hand-left",
+    "silhouetteIoU": 0.9989923854091998,
+    "meanAbsoluteRGB_0_255": 2.4349229988153662,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 33.659484742881716,
+    "evaluatedPixels": 147725
+  },
+  {
+    "view": "hand-right",
+    "silhouetteIoU": 0.9997758964143426,
+    "meanAbsoluteRGB_0_255": 2.7054875421043136,
+    "p95AbsoluteRGB_0_255": 9.0,
+    "PSNR_foreground_dB": 32.66279378733359,
+    "evaluatedPixels": 441661
+  },
+  {
+    "view": "legs",
+    "silhouetteIoU": 0.9967655732459288,
+    "meanAbsoluteRGB_0_255": 3.763560275442417,
+    "p95AbsoluteRGB_0_255": 13.0,
+    "PSNR_foreground_dB": 27.69573539838843,
+    "evaluatedPixels": 115257
+  },
+  {
+    "view": "side",
+    "silhouetteIoU": 0.9942163665277766,
+    "meanAbsoluteRGB_0_255": 4.0636773063587945,
+    "p95AbsoluteRGB_0_255": 16.0,
+    "PSNR_foreground_dB": 27.66642049169162,
+    "evaluatedPixels": 111908
+  },
+  {
+    "view": "three-quarter",
+    "silhouetteIoU": 0.9957882960696247,
+    "meanAbsoluteRGB_0_255": 4.019891949047532,
+    "p95AbsoluteRGB_0_255": 17.0,
+    "PSNR_foreground_dB": 26.781487234631438,
+    "evaluatedPixels": 121054
+  },
+  {
+    "view": "torso",
+    "silhouetteIoU": 0.9979834701354767,
+    "meanAbsoluteRGB_0_255": 3.55052143611538,
+    "p95AbsoluteRGB_0_255": 13.0,
+    "PSNR_foreground_dB": 28.905794532877977,
+    "evaluatedPixels": 210828
+  }
+]

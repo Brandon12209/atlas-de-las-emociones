@@ -1,0 +1,86 @@
+[
+  {
+    "name": "front",
+    "angle": 0,
+    "target": [
+      0,
+      0.95,
+      0
+    ],
+    "height": 2.1,
+    "width": 768,
+    "pixels": 1024
+  },
+  {
+    "name": "side",
+    "angle": 1.5707963267948966,
+    "target": [
+      0,
+      0.95,
+      0
+    ],
+    "height": 2.1,
+    "width": 768,
+    "pixels": 1024
+  },
+  {
+    "name": "back",
+    "angle": 3.141592653589793,
+    "target": [
+      0,
+      0.95,
+      0
+    ],
+    "height": 2.1,
+    "width": 768,
+    "pixels": 1024
+  },
+  {
+    "name": "three-quarter",
+    "angle": -0.7853981633974483,
+    "target": [
+      0,
+      0.95,
+      0
+    ],
+    "height": 2.1,
+    "width": 768,
+    "pixels": 1024
+  },
+  {
+    "name": "face",
+    "angle": 0,
+    "target": [
+      0,
+      1.59,
+      0.02
+    ],
+    "height": 0.46,
+    "width": 768,
+    "pixels": 768
+  },
+  {
+    "name": "hand-left",
+    "angle": 0,
+    "target": [
+      0.20718801021575928,
+      1.4631664752960205,
+      0.24055808782577515
+    ],
+    "height": 0.36,
+    "width": 768,
+    "pixels": 768
+  },
+  {
+    "name": "hand-right",
+    "angle": 0,
+    "target": [
+      -0.2783447802066803,
+      1.5007396936416626,
+      0.23496899008750916
+    ],
+    "height": 0.36,
+    "width": 768,
+    "pixels": 768
+  }
+]

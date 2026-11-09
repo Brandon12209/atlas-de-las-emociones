@@ -1,0 +1,101 @@
+{
+  "source": "MITA_ENOJO_WEB.blend",
+  "objects": [
+    {
+      "name": "Mita_Usual_Head",
+      "vertices": 4304,
+      "polygons": 4478,
+      "materials": [
+        "Mita_Usual_Face",
+        "Mita_Face_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Glasses",
+      "vertices": 624,
+      "polygons": 670,
+      "materials": [
+        "Mita_Outline",
+        "Mita Glasses",
+        "Mita Glasses Glass"
+      ]
+    },
+    {
+      "name": "Mita_Shorthair_Hair",
+      "vertices": 6808,
+      "polygons": 12914,
+      "materials": [
+        "Mita_Short_Hair",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Usual_Body",
+      "vertices": 4284,
+      "polygons": 4396,
+      "materials": [
+        "Mita_Usual_Body",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Usual_Pantyhose",
+      "vertices": 1636,
+      "polygons": 1680,
+      "materials": [
+        "Mita_Usual_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Usual_Shoes",
+      "vertices": 1376,
+      "polygons": 1440,
+      "materials": [
+        "Mita_Usual_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Usual_Skirt",
+      "vertices": 4800,
+      "polygons": 5198,
+      "materials": [
+        "Mita_Usual_Clothes",
+        "Mita_Outline"
+      ]
+    },
+    {
+      "name": "Mita_Usual_Sweater",
+      "vertices": 3464,
+      "polygons": 3892,
+      "materials": [
+        "Mita_Usual_Clothes",
+        "Mita_Outline"
+      ]
+    }
+  ],
+  "method": "Eevee UV radiance bake; original evaluated geometry; separate original outline shells",
+  "landmarks": {
+    "manoL": [
+      -0.06571934372186661,
+      1.236421823501587,
+      0.12001114338636398
+    ],
+    "manoR": [
+      0.08042563498020172,
+      1.2569060325622559,
+      0.20371535420417786
+    ],
+    "torso": [
+      0.023714248090982437,
+      1.1685155630111694,
+      -0.10191478580236435
+    ],
+    "rostro": [
+      0.0168924443423748,
+      1.6158069372177124,
+      0.012741263955831528
+    ]
+  }
+}

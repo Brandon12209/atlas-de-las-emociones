@@ -1,0 +1,23 @@
+PGI | ATLAS DE LAS EMOCIONES
+FASE 01 - GALERIA 3D EN THREE.JS
+
+Archivos incluidos:
+  src/museo.js
+  src/museo.css
+
+Este paquete no contiene archivos de Mila, no modifica su aspecto
+ni incluye controles de expresiones, poses o ropa.
+
+Para instalarlo en el proyecto local de Windows:
+1. Descarga el ZIP a tu carpeta Descargas.
+2. Deja npm.cmd run dev funcionando, abre otra terminal en la raiz de SITIO_DESARROLLO.
+3. Antes de integrar esta fase, haz una copia de index.html. Extrae los archivos
+   sin sustituir src/main.js y cambia la entrada a /src/museo.js.
+4. Abre http://localhost:5173/ y verifica que se vea la sala.
+
+Controles: Inspeccionar (orbita + zoom); doble clic sobre modelo para enfoque.
+Recorrer (clic para bloquear raton, WASD + mouse, Esc vuelve a inspeccion).
+
+Limitaciones de esta etapa: astronauta remoto de prueba, no Mila; paredes y
+colisiones simplificadas; sin paneles educativos definitivos ni controles moviles
+para el recorrido. El demo remoto requiere conexion a Internet.
